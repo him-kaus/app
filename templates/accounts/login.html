@@ -1,0 +1,57 @@
+{% extends 'authbase.html' %}
+{% load static %}
+{% block content %}
+<section class="page__title  fix text-center">
+    <div class="slider__shape">
+        <img class="shape triangle" src="{% static 'assets/img/aboutpage/topElips.png' %}" alt="topshape">
+        <img class="shape dotted-square" src="{% static 'assets/img/aboutpage/rightElips.png' %}" alt="rightshape">
+        <img class="shape solid-square" src="{% static 'assets/img/aboutpage/circleElips.png' %}" alt="solid-square">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page__title-content pt-235">
+                    <h2 class="page_title">Login</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- page title end  -->
+
+<!-- login Area Strat-->
+<section class="login-area pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="basic-login">
+                    <h3 class="text-center mb-60"><stong>Welcome</stong><br>You are not Signed In</h3>
+
+                    <form method="post">
+                       {% csrf_token %}
+                        {% if error %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error }}</strong>
+                        </div>
+                        {% endif %}
+                        <label>Username <span>*</span></label>
+                        <input id="id_username" name="username" type="text" placeholder="Enter Username "/>
+                        <label>Password <span>*</span></label>
+                        <input id="id_password" name="password" type="password" placeholder="Enter password..."/>
+                        <div class="login-action mb-20 fix">
+                            <span class="forgot-login f-right">
+                                <a href="{% url 'accounts:password_reset' %}">Lost your password?</a>
+                            </span>
+                        </div>
+                        <button type="submit" class="bt-btn theme-btn-2 hemal w-100"><span>Login Now</span></button>
+                        <div class="or-divide"><span>or</span></div>
+                        <a href="{% url 'accounts:signup' %}" class="bt-btn bt-btn-green w-100"
+                           style="text-align: center; text-decoration: none">Register Now</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- login Area End-->
+{% endblock %}

@@ -1,0 +1,130 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QuantChef</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/default.html' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+</head>
+<body>
+<!-- FOOTER START -->
+<div class="footer-area padding-remove footertext-hover2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-2 col-md-3">
+                <div class="footer_logo" style="width: 175px">
+                    <img src="{% static 'images/logo-1.png' %}" alt="logo"/>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-3">
+                <div class="footer_widget_design wow  ">
+                    <div class="link_heading">
+                        <h3 class="link_heading">Useful Links</h3>
+                    </div>
+                    <div class="links">
+                        <ul>
+                            <li><a href="{% url 'core:home' %}">Home </a></li>
+                            <li><a href="{% url 'core:book' %}">Schedule A Meeting</a></li>
+                            <li><a href="{% url 'core:home' %}#section0">About Us</a></li>
+                                <li><a href="{% url 'core:home' %}#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-2 col-md-3">
+                <div class="footer_widget_design wow  " >
+                    <div class="link_heading">
+                        <h3 class="link_heading">Resources</h3>
+                    </div>
+                    <div class="links">
+                        <ul>
+                            <li><a href="{% url 'core:appointments' %}">Dashboard</a></li>
+                            <li><a href="{% url 'core:privacypolicy' %}">Privacy Policy</a></li>
+                            <li><a href="{% url 'core:cookiespolicy' %}">Cookies Policy</a></li>
+                            <li><a href="{% url 'core:termsnconditions' %}">Terms and Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3">
+                <div class="footer_widget_design fixwidth wow  " >
+                    <div class="link_heading">
+                        <h3 class="link_heading">Office Location</h3>
+                    </div>
+                    <div class="links">
+                        <ul>
+                            <li><a><i class="fas fa-map-marker-alt"></i> Ground Floor, NH-6, Matkatpur,
+                                Kharagpur ,West Bengal
+                                721305
+                            </a></li>
+                            <li><a type="tel:+91 9339656867" class="itsupport"><i class="fas fa-phone"></i> Phone:
+                                +91 9339656867
+                            </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p>Disclaimer:QuantBot(Quantbot Securities Private Limited) is a technology provider platform and does
+                not act/intend to act as a wealth manager in any capacity. We are not a Wealth Advisor/Investment
+                Advisor/Portfolio Management Service or any similar service affiliated to stock markets. Every
+                selection/transaction taken place through QuantBot is solely the responsibility of the user. We have
+                tried our best to make the system as transparent as possible, however, QuantBot cannot be held
+                liable under any circumstances.
+            </p>
+        </div>
+    </div>
+    <div class="footer_bottom pt-60 pb-15">
+        <div class="container tp-border">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="copyright_text pt-20">
+                        <p style="margin-left: 30%" class="mx-50">@
+                            <script>document.write(new Date().getFullYear())</script>
+                            All Copyright Reserved. Design by
+                            <span class="colorblue"><a
+                                    href="https://www.quantbotsecurities.com/"> Quant Bot Securities</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FOOTER END -->
+
+<script src="{% static 'assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/one-page-nav-min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'assets/js/ajax-form.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>

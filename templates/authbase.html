@@ -1,0 +1,195 @@
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QuantChef</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">-->
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/default.html' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <style>
+        ::-webkit-input-placeholder { /* Edge */
+            color: grey !important;
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer */
+            color: grey !important;
+        }
+
+        ::placeholder {
+            color: grey !important;
+        }
+    </style>
+</head>
+<body>
+<!-- HEADER START -->
+<header>
+    <div id="header-sticky" class="header-area transparent-header font-color pt-10 pb-10">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-10 d-flex align-items-center">
+                    <div class="logo">
+                        <a href="{% url 'core:home' %}"> <img style="width: 100%" src="{% static 'images/logo-1.png' %}"
+                                                              alt="QuantChef"> </a>
+                    </div>
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-7 col-8 d-none d-md-block whitebg">
+                    <div class="header-btn f-right d-none d-sm-none d-md-block">
+                        <a href="{% url 'accounts:login' %}" class="btn"><i class="fal fa-lock-alt"></i>Sign In</a>
+                    </div>
+                    <div class="main-menu colormenu d-block">
+                        <nav id="mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'core:home' %}">Home</a></li>
+                                <li><a href="{% url 'core:book' %}">Schedule a Meeting</a></li>
+                                <li><a href="{% url 'core:ads' %}">Bot Market</a></li>
+                                <li><a href="{% url 'core:home' %}#section0">About Us</a></li>
+                                <li><a href="{% url 'core:home' %}#contact">Contact us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-2 col-md-1">
+                    <div class="side-menu-icon d-lg-none text-end ">
+                        <button class="side-toggle"><i class="far fa-bars text-white"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- HEADER END -->
+
+<div class="fix">
+    <div class="side-info">
+        <button class="side-info-close"><i class="fal fa-times"></i></button>
+        <div class="side-info-content">
+            <div class="mobile-menu"></div>
+        </div>
+    </div>
+</div>
+<div class="offcanvas-overlay"></div>
+<!-- page title start  -->
+{% block content %}
+
+{% endblock %}
+
+<!-- FOOTER START -->
+<div class="footer-area padding-remove footertext-hover2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-2 col-md-3">
+                <div class="footer_logo" style="width: 175px">
+                    <img src="{% static 'images/logo-1.png' %}" alt="logo"/>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-3">
+                <div class="footer_widget_design wow  " data-wow-duration="2s" data-wow-delay=".2s">
+                    <div class="link_heading">
+                        <h3 class="link_heading">Useful Links</h3>
+                    </div>
+                    <div class="links">
+                        <ul>
+                            <li><a href="{% url 'core:home' %}">Home </a></li>
+                            <li><a href="{% url 'core:book' %}">Schedule A Meeting</a></li>
+                            <li><a href="{% url 'core:home' %}#section0">About Us</a></li>
+                            <li><a href="{% url 'core:home' %}#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-2 col-md-3">
+                <div class="footer_widget_design wow  " data-wow-duration="2s" data-wow-delay=".2s">
+                    <div class="link_heading">
+                        <h3 class="link_heading">Resources</h3>
+                    </div>
+                    <div class="links">
+                        <ul>
+                            <li><a href="{% url 'core:appointments' %}">Dashboard</a></li>
+                            <li><a href="{% url 'core:privacypolicy' %}">Privacy Policy</a></li>
+                            <li><a href="{% url 'core:cookiespolicy' %}">Cookies Policy</a></li>
+                            <li><a href="{% url 'core:termsnconditions' %}">Terms and Condition</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3">
+                <div class="footer_widget_design fixwidth wow  ">
+                    <div class="link_heading">
+                        <h3 class="link_heading">Office Location</h3>
+                    </div>
+                    <div class="links">
+                        <ul>
+                            <li><a><i class="fas fa-map-marker-alt"></i> Ground Floor, NH-6, Matkatpur,
+                                Kharagpur ,West Bengal
+                                721305
+                            </a></li>
+                            <li><a type="tel:+91 9339656867" class="itsupport"><i class="fas fa-phone"></i> Phone:
+                                +91 9339656867
+                            </a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <p>Disclaimer:QuantBot(Quantbot Securities Private Limited) is a technology provider platform and does
+                not act/intend to act as a wealth manager in any capacity. We are not a Wealth Advisor/Investment
+                Advisor/Portfolio Management Service or any similar service affiliated to stock markets. Every
+                selection/transaction taken place through QuantBot is solely the responsibility of the user. We have
+                tried our best to make the system as transparent as possible, however, QuantBot cannot be held
+                liable under any circumstances.
+            </p>
+        </div>
+    </div>
+    <div class="footer_bottom pt-60 pb-15">
+        <div class="container tp-border">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="copyright_text pt-20">
+                        <p style="margin-left: 30%" class="mx-50">@
+                            <script>document.write(new Date().getFullYear())</script>
+                            All Copyright Reserved. Design by
+                            <span class="colorblue"><a
+                                    href="https://www.quantbotsecurities.com/"> Quant Bot Securities</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FOOTER END -->
+<!-- JS here -->
+<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/one-page-nav-min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'assets/js/ajax-form.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

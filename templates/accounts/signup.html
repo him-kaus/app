@@ -1,0 +1,67 @@
+{% extends 'authbase.html' %}
+{% load static %}
+{% block content %}
+<!-- page title start  -->
+<section class="page__title  fix text-center">
+    <div class="slider__shape">
+        <img class="shape triangle" src="{% static 'assets/img/aboutpage/topElips.png' %}" alt="topshape">
+        <img class="shape dotted-square" src="{% static 'assets/img/aboutpage/rightElips.png' %}" alt="rightshape">
+        <img class="shape solid-square" src="{% static 'assets/img/aboutpage/circleElips.png' %}" alt="solid-square">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page__title-content pt-235">
+                    <h2 class="page_title">Register User</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- page title end  -->
+
+<!-- login Area Strat-->
+<section class="login-area pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="basic-login">
+                    <h3 class="text-center mb-60">Create a new account</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                         {% include 'accounts/errorfile.html' %}
+                        <label>Email Address <span>*</span></label>
+                        <input name="email"
+                            id="id_email" type="email" placeholder="Email Address Here">
+
+                        <label>Username<span>*</span></label>
+                        <input name="username"
+                            id="id_username" placeholder="Username">
+
+                        <label>Phonenumber<span>*</span></label>
+                        <input name="phonenumber"
+                            id="id_phonenumber" type="tel" placeholder="+91123456789">
+
+                        <label>Password<span>*</span></label>
+                        <input name="password1"
+                            id="id_password1" type="password" placeholder="Password">
+
+                        <label>Confirm Password<span>*</span></label>
+                        <input name="password2"
+                            id="id_password2" type="password" placeholder="Confirm Password">
+
+                        <div class="login-action mb-20 fix">
+
+                        </div>
+                        <button type="submit" class="bt-btn theme-btn-2 hemal w-100"><span>Register Now</span></button>
+                        <div class="or-divide"><span>or</span></div>
+                        <a href="{% url 'accounts:login' %}" style="text-align: center; text-decoration: none" class="bt-btn bt-btn-green w-100">Already Registered. Login?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- login Area End-->
+
+{% endblock %}

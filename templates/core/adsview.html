@@ -1,0 +1,99 @@
+{% extends 'authbase.html' %}
+{% load static %}
+{% block content %}
+    <section class="page__title  fix text-center">
+        <div class="slider__shape">
+            <img class="shape triangle" src="{% static 'assets/img/aboutpage/topElips.png' %}" alt="topshape">
+            <img class="shape dotted-square" src="{% static 'assets/img/aboutpage/rightElips.png' %}" alt="rightshape">
+            <img class="shape solid-square" src="{% static 'assets/img/aboutpage/circleElips.png' %}"
+                 alt="solid-square">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="page__title-content pt-235">
+                        <h2 class="page_title">Our Bot Markeet</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- page title end  -->
+
+    <!-- pricing area start  -->
+    <div class="pricing-area pt-105 pb-110 position-relative">
+        <div class="pricing_shapes">
+            <img class="position-absolute price-1" src="{% static 'assets/img/shape/left.png' %}" alt="pricing_shapes"/>
+            <img class="position-absolute price-2" src="{% static 'assets/img/shape/shape7.png' %}"
+                 alt="pricing_shapes"/>
+            <img class="position-absolute price-3" src="{% static 'assets/img/shape/shape2.png' %}"
+                 alt="pricing_shapes"/>
+        </div>
+        <div class="container">
+            <div class="section_title_wrapper text-center pb-50">
+                <h2 class="section-title pricing_title">Choose the offering that <br>works best for you.</h2>
+            </div>
+            <div class="row">
+                {% for obj in obj %}
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                        <div class="pricing mb-30">
+                            <div class="pricing__header lightcolor">
+                                <h2><span>₹</span>{{ obj.Price }}</h2>
+                                <img src="{{ obj.Image.url }}">
+
+                            </div>
+                            <div class="pricing__content">
+                                <ul>
+                                    <li><i class="fa fa-arrow-right"></i><strong>Strategy
+                                        Name: </strong>{{ obj.StrategyName }}</li>
+                                    <li><i class="fa fa-arrow-right"></i><strong>Capital
+                                        Required: </strong> {{ obj.CapitalRequired }}</li>
+                                    <li><i class="fa fa-arrow-right"></i><strong>Segment: </strong> {{ obj.Segment }}
+                                    </li>
+                                    <li><i class="fa fa-arrow-right"></i><strong>Platform: </strong> {{ obj.Platform }}
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="pricing__content">
+                                <ul>
+                                    <li><i class="fa fa-phone"></i><a style="text-decoration: none"
+                                                                      href="tel:{{ obj.UploaderPhone }}">{{ obj.UploaderPhone }}</a>
+                                    </li>
+                                    <li><i class="fa fa-envelope"></i>{{ obj.UploaderEmail }}</li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                {% if obj.Youtube|length %}
+                                    <div class="col">
+                                        <a href="{{ obj.Youtube }}"><i style="color: black"
+                                                                       class="fab fa-youtube fa-2x"></i></a>
+                                    </div>
+                                {% endif %}
+                                {% if obj.Telegram|length %}
+                                    <div class="col">
+                                        <a href="{{ obj.Telegram }}"><i style="color: black"
+                                                                        class="fab fa-telegram fa-2x"></i></a>
+                                    </div>
+                                {% endif %}
+                                {% if obj.Website|length %}
+                                    <div class="col">
+                                        <a href="{{ obj.Website }}"><i style="color: black"
+                                                                       class="fal fa-globe fa-2x"></i></a>
+                                    </div>
+                                {% endif %}
+                                {% if obj.Tradingview|length %}
+                                    <div class="col">
+                                        <a href="{{ obj.Tradingview }}"><i style="color: black"
+                                                                           class="fas fa-chart-bar fa-2x"></i></a>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- pricing area end -->
+
+{% endblock %}

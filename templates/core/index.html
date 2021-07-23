@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+    <div class="col-xl-9 col-lg-8 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+        <div class="row">
+            <div class="col-xl-8 col-lg-6">
+                <h5 class="mb-0">Appointment</h5>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row">
+            <div class="col-12 mt-4 pt-2">
+                <div class="table-responsive shadow rounded">
+                    <table style="width: 100%" class="table table-center bg-white mb-0">
+                        <thead>
+                        <tr>
+                            <th class="border-bottom py-2">#</th>
+                            <th class="border-bottom py-2">Date</th>
+                            <th class="border-bottom py-2">Time</th>
+                            <th class="border-bottom py-2">Status</th>
+                            <th class="border-bottom py-2" style="min-width: 120px;">Payment Link</th>
+                            <th class="border-bottom py-2" style="min-width: 120px;">Meeting Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for obj in obj %}
+                            <tr>
+                                <th>{{ forloop.counter }}</th>
+                                <td>{{ obj.Date }}</td>
+                                <td>{{ obj.Slot }}</td>
+                                <td>{{ obj.Status }}</td>
+                                <td>
+                                    {% if obj.PaymentLink %}
+                                        <a href="{{ obj.PaymentLink }}" class="btn btn-primary"> Pay Now </a>
+                                    {% endif %}
+                                </td>
+                                <td><input type="url" value="{{ obj.Link }}" id="copylink">
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!--end row-->
+    </div><!--end col-->
+
+
+
+{% endblock %}

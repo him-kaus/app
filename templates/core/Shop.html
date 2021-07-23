@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="col-xl-9 col-lg-8 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+    <div class="row">
+        <div class="col-xl-8 col-lg-6">
+            <h5 class="mb-0">Add Bot to Markeet</h5>
+        </div><!--end col-->
+    </div><!--end row-->
+
+    <div class="row">
+        <div class="col-12 mt-4 pt-2">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% include 'accounts/errorfile.html' %}
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" style="color: black"> Your Name : <span
+                                    class="text-danger">*</span></label>
+                            {{ form.UploaderName }}
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label" for="input-time" style="color: black">Your Email : <span
+                                    class="text-danger">*</span></label>
+                            {{ form.UploaderEmail }}
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-md-6 my-2">
+                        <div class="mb-3">
+                            <label class="form-label" for="input-time" style="color: black">Your Contact Number: <span
+                                    class="text-danger">*</span></label>
+                            {{ form.UploaderPhone }}
+                        </div>
+                    </div><!--end col-->
+                    <div class="col-md-6 my-2">
+                        <div class="mb-3">
+                            <label class="form-label" for="input-time" style="color: black">Platform: <span
+                                    class="text-danger">*</span></label>
+                            {{ form.Platform }}
+                        </div>
+                    </div><!--end col-->
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Strategy Name<span
+                                    class="text-danger">*</span></label>
+                            {{ form.StrategyName }}
+                        </div><!--end col-->
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Capital Required ₹<span
+                                    class="text-danger">*</span></label>
+                            {{ form.CapitalRequired }}
+                        </div><!--end col-->
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Segment<span
+                                    class="text-danger">*</span></label>
+                            {{ form.Segment }}
+                        </div><!--end col-->
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Price ₹<span
+                                    class="text-danger">*</span></label>
+                            {{ form.Price }}
+                        </div><!--end col-->
+                    </div>
+                    <div class="col-md-6 my-2">
+                        <label class="form-label" for="input-time" style="color: black">Upload Image: <span
+                                class="text-danger">*</span></label>
+                        {{ form.Image }}
+                    </div><!--end col-->
+                    <div class="row my-2">
+                        <h6>Optional Fields</h6>
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Youtube Link</label>
+                            {{ form.Youtube }}
+                        </div><!--end col-->
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Website Link</label>
+                            {{ form.Website }}
+                        </div><!--end col-->
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Trading View Link</label>
+                            {{ form.Tradingview }}
+                        </div><!--end col-->
+                        <div class="col-6">
+                            <label class="form-label" style="color: black">Telegram Link</label>
+                            {{ form.Telegram }}
+                        </div>
+                    </div>
+                    <div class="col-lg-12 my-2">
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </form>
+        </div>
+    </div><!--end row-->
+</div><!--end col-->
+
+
+{% endblock %}

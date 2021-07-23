@@ -1,0 +1,469 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QuantChef</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/default.html' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+</head>
+
+<body>
+
+
+<!-- HEADER START -->
+<header>
+    <div id="header-sticky" class="header-area header-area-orange transparent-header pt-10 pb-10">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-2 col-md-4 col-10 d-flex align-items-center">
+                    <div class="logo" style="width: 100%">
+                        <a href="{% url 'core:home' %}"> <img src="{% static 'images/logo-1.png' %}" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-10 col-lg-10 col-md-7 col-8 d-none d-md-block">
+                    <div class="header-btn f-right d-none d-sm-none d-md-block">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'accounts:login' %}" class="btn btnblue"><i class=""></i>Dashboard</a>
+                        {% else %}
+                        <a href="{% url 'accounts:login' %}" class="btn btnblue"><i class="fal fa-lock-alt"></i>Sign In</a>
+                        {% endif %}
+                    </div>
+                    <div class="main-menu  colormenu d-block">
+                        <nav id="mobile-menu">
+                            <ul>
+                                <li><a href="{% url 'core:home' %}">Home</a></li>
+                                <li><a href="{% url 'core:book' %}">Schedule a Meeting</a></li>
+                                <li><a href="{% url 'core:ads' %}">Bot Market</a></li>
+                                <li><a href="#section0">About Us</a></li>
+                                <li><a href="#contact">Contact us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-2 col-md-1">
+                    <div class="side-menu-icon bar-three d-lg-none text-end">
+                        <button class="side-toggle"><i class="far fa-bars"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- HEADER END -->
+
+<div class="fix">
+    <div class="side-info">
+        <button class="side-info-close"><i class="fal fa-times"></i></button>
+        <div class="side-info-content">
+            <div class="mobile-menu"></div>
+        </div>
+    </div>
+</div>
+<div class="offcanvas-overlay"></div>
+
+<main>
+    <!-- === SLIDER AREA START === -->
+    <div class="app_slider app_slider_3 fix">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8  col-md-8 ">
+                    <div class="app_sliderContent slider3">
+                        <div class="shapeesright d-none d-sm-block">
+                            <img class="shape4" src="{% static 'assets/img/shape/shape4.png' %}" alt=""/>
+                            <img class="shape5" src="{% static 'assets/img/shape/shape5.png' %}" alt=""/>
+                            <img class="shape6" src="{% static 'assets/img/shape/shape6.png' %}" alt=""/>
+                            <img class="shape7" src="{% static 'assets/img/shape/shape7.png' %}" alt=""/>
+                            <img class="shape8" src="{% static 'assets/img/shape/shape8.png' %}" alt=""/>
+                            <img class="shape9" src="{% static 'assets/img/shape/shape9.png' %}" alt=""/>
+                            <img class="shape11" src="{% static 'assets/img/shape/shape5.png' %}" alt=""/>
+                        </div>
+                        <h2 class="hero-two-title">One Stop Solution for Your<br> AlgoTrading Needs.</h2>
+                        <br>
+                        <p> We build,deploy and test trading strategies, indicators, bots as you need
+                            .!!</p>
+                        <div class="slider-btn">
+                            <a style="text-decoration: none" class="btn-outline btn-outline3"
+                               href="{% url 'core:book' %}">Schedule a Meeting</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 d-none d-lg-none d-xl-block p-custom-rel">
+                    <div class="slider3_main_image">
+                        <img src="{% static 'assets/img/home_3_shapes/vevtorobject.png' %}" alt="slider_main_image"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- === SLIDER AREA END === -->
+
+    <!-- === HOME-3 FETURES AREA START === -->
+    <div class="fetures2 fetures3 pt-115 pb-120">
+        <div class="fetures_shape_h3 d-none d-sm-block">
+            <img class="shape_1_h3 posabsouluteh3" src="{% static 'assets/img/shape/shape9.png' %}" alt="shape"/>
+            <img class="shape_2_h3 posabsouluteh3" src="{% static 'assets/img/shape/shape7.png' %}" alt="shape"/>
+            <img class="shape_3_h3 posabsouluteh3" src="{% static 'assets/img/shape/shape5.png' %}" alt="shape"/>
+            <img class="shape_4_h3 posabsouluteh3" src="{% static 'assets/img/shape/shape6.png' %}" alt="shape"/>
+        </div>
+        <div class="container">
+            <div class="section_title_wrapper mb-60 text-center pt-80">
+                <h2 class="section-title">QuantChef Built For.
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4  col-md-6 ">
+                    <div class="featurebox2 featurebox3 mb-30">
+                        <div class="featurebox__img">
+                            <img src="{% static 'images/card.png' %}" alt=""/>
+                        </div>
+                        <div class="featurebox2__content">
+                            <h3 class="fea-title">Retail Stock Trader</h3>
+                            <p class="text-start">Individual traders looking to automate their trades and add
+                                disciple in <br>trades.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4  col-md-6 ">
+                    <div class="featurebox2 featurebox3 mb-30">
+                        <div class="featurebox__img">
+                            <img style="width: 96px;" src="{% static 'images/consulting.png' %}" alt=""/>
+                        </div>
+                        <div class="featurebox2__content">
+                            <h3 class="fea-title">Investment Advisors</h3>
+                            <p class="text-start">Firms looking to provide advisory services with verified and
+                                quantitative trading strategies.</p>
+                            {# <a class="fea-link fea_link3 " href="service.html">Read More<i#}
+                            {# class="fal fa-arrow-right"></i></a>#}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4  col-md-6 ">
+                    <div class="featurebox2 featurebox3 mb-30">
+                        <div class="featurebox__img">
+                            <img src="{% static 'images/idea.png' %}" alt=""/>
+                        </div>
+                        <div class="featurebox2__content">
+                            <h3 class="fea-title">Learners and researchers</h3>
+                            <p class="text-start">People who are learning and researching and trying to implement
+                                algorithmic trading from scratch .</p>
+                            {# <a class="fea-link fea_link3 " href="service.html">Read More<i#}
+                            {# class="fal fa-arrow-right"></i></a>#}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- === HOME-3 FETURES AREA END === -->
+
+    <!-- FETURES CONTENT START -->
+    <div class="app_image app_image3 pt-40 pb-140">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-12">
+                    <div class="app_image_shape_h3 d-none d-sm-block">
+                        <img class="posabsouluteh3 app1 d-md-none d-lg-block"
+                             src="{% static 'assets/img/shape/dark1.png' %}"
+                             alt="shape_missing"/>
+                        <img class="posabsouluteh3 app2 d-md-none d-lg-block d-sm-none "
+                             src="{% static 'assets/img/shape/shape5.png' %}" alt="shape_missing"/>
+                        <img class="posabsouluteh3 app3 d-md-none d-lg-block"
+                             src="{% static 'assets/img/shape/shape5.png' %}"
+                             alt="shape_missing"/>
+                        <img class="posabsouluteh3 app4" src="{% static 'assets/img/shape/lightshape.png' %}"
+                             alt="shape_missing"/>
+                        <img class="posabsouluteh3 app5" src="{% static 'assets/img/shape/verysmall.png' %}"
+                             alt="shape_missing"/>
+                        <img class="posabsouluteh3 app6" src="{% static 'assets/img/shape/shape8.png' %}"
+                             alt="shape_missing"/>
+                        <img class="posabsouluteh3 app7" src="{% static 'assets/img/shape/shape3.png' %}"
+                             alt="shape_missing"/>
+                    </div>
+                    <div class="app-image wow fadeInUp" data-wow-delay=".3s"
+                         style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <img src="{% static 'assets/img/about/appabout.png' %}" alt=""/>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12">
+                    <div class="features feturesCommon wow fadeInUp pt-90 pl-100 remove-pad" data-wow-delay=".3s"
+                         style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <div class="features__icon h3_shape">
+                            <img style="margin-top: 24%" src="{% static 'assets/img/fetures/fetures3.png' %}" alt=""/>
+                        </div>
+                        <div class="features__content h3_content">
+                            <h2 class="section-title">Dive into zero touch algo trading setup with us .</h2>
+                            <p>Our unique algo trading platform is fully automated with no manual intervention .</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FETURES CONTENT START -->
+
+    <!-- TESTIMONIAL AREA START -->
+    <div class="testimonial_h3 pt-110">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="testimonialh3_active">
+                        <div class="testimonialh3 text-center">
+                            <div class="testimonialh3__image">
+                                <img src="{% static 'assets/img/testimonial/h3.png' %}" alt="testimonial_image"/>
+                            </div>
+                            <div class="testimonialh3__content">
+                                <h3>The team was very responsive and triple checked to make sure he
+                                    <br>
+                                    understood my trading process before beginning. My order was
+                                    <br>
+                                    completed very quickly.Will definitely use QuantChef again,</h3>
+                                <h4>Rahul Agarwal</h4>
+                                {# <span>Ui/Ux Designer</span>#}
+                            </div>
+                        </div>
+                        <div class="testimonialh3 text-center">
+                            <div class="testimonialh3__image">
+                                <img src="{% static 'assets/img/testimonial/test2.jpg' %}" alt="testimonial_image"/>
+                            </div>
+                            <div class="testimonialh3__content">
+                                <h3>QuantChef delivered as promised. The developer was very responsive
+                                    <br>
+                                    with fast turn-around times and delivered on time. He managed to
+                                    <br>
+                                    program a complex TradingView strategy based on multiple indicators,
+                                    <br>
+                                    with variable take-profit/stop-loss conditions and custom alerts.
+                                    <br>
+                                    Everything works exactly as it should according to the criteria I specified.
+                                    <br>
+                                    The developer is very friendly in his communication and he did an excellent job.
+                                </h3>
+                                <h4>Andrew Harris</h4>
+                                {# <span>Ui/Ux Designer</span>#}
+                            </div>
+                        </div>
+                        <div class="testimonialh3 text-center">
+                            <div class="testimonialh3__image">
+                                <img src="{% static 'assets/img/testimonial/test3.jpg' %}" alt="testimonial_image"/>
+                            </div>
+                            <div class="testimonialh3__content">
+                                <h3>This was an amazing experience. Very helpful. Very generous.
+                                    <br>
+                                    Everything was understood and completed better than I could have
+                                    <br>
+                                    hoped for and expected. Highly recommended. Already organising
+                                    <br>
+                                    the next project.</h3>
+                                <h4>Minakshi Rao</h4>
+                                {# <span>Ui/Ux Designer</span>#}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TESTIMONIAL AREA END -->
+
+    {% include 'roadmap.html' %}
+    <!-- SOCIAL SHARE START  -->
+    <div class="social_share mb-100">
+        <div class="container">
+            <div class="section_title_wrapper mb-80 text-center mt-115">
+                <h2 class="section-title mb-20">Join our community to stay updated</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="share align-items-center mb-30">
+                        <div class="share__icon">
+                            <img src="{% static 'assets/img/social/youtube.png' %}" alt="shareIcon"/>
+                        </div>
+                        <div class="share__content">
+                            <h4><a style="text-decoration: none;"
+                                   href=" https://www.youtube.com/channel/UCVO-yezzlhHOnbhtwT6_-3A">YouTube</a></h4>
+                            <span> <a style="text-decoration: none; color: black"
+                                      href=" https://www.youtube.com/channel/UCVO-yezzlhHOnbhtwT6_-3A">Channel</a></span>
+                        </div>
+                        <div class="share__more text-end">
+                            <a href="https://www.youtube.com/channel/UCVO-yezzlhHOnbhtwT6_-3A"><i
+                                    class="fal fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="share align-items-center mb-30">
+                        <div class="share__icon">
+                            <img src="{% static 'assets/img/social/facebook.png' %}" alt="shareIcon"/>
+                        </div>
+                        <div class="share__content">
+                            <h4><a style="text-decoration: none;"
+                                   href="https://www.facebook.com/groups/220256999924989">FaceBook</a></h4>
+                            <span><a style="text-decoration: none; color: black"
+                                     href="https://www.facebook.com/groups/220256999924989">Group</a></span>
+                        </div>
+                        <div class="share__more text-end">
+                            <a href="https://www.facebook.com/groups/220256999924989"><i class="fal fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="share align-items-center mb-30">
+                        <div class="share__icon">
+                            <img src="{% static 'assets/img/social/telegram.png' %}" alt="shareIcon"/>
+                        </div>
+                        <div class="share__content">
+                            <h4><a style="text-decoration: none;" href="http://t.me/QuantChef">Telegram</a></h4>
+                            <span><a style="text-decoration: none; color: black"
+                                     href="http://t.me/QuantChef">Channel</a></span>
+                        </div>
+                        <div class="share__more text-end">
+                            <a href="http://t.me/QuantChef"><i class="fal fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="share align-items-center mb-30">
+                        <div class="share__icon">
+                            <img src="{% static 'assets/img/social/whatsapp.png' %}" alt="shareIcon"/>
+                        </div>
+                        <div class="">
+                            <h4><a style="text-decoration: none;" href="https://wa.me/919339656867">WhatsApp</a></h4>
+                            <span><a style="text-decoration: none; color: black"
+                                     href="https://wa.me/919339656867">Chat</a></span>
+                        </div>
+                        <div class="share__more text-end">
+                            <a href="https://wa.me/919339656867"><i class="fal fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SOCIAL SHARE END  -->
+
+    <!-- FOOTER START -->
+    <div class="footer-area padding-remove footertext-hover2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-2 col-md-3">
+                    <div class="footer_logo" style="width: 175px">
+                        <img src="{% static 'images/logo-1.png' %}" alt="logo"/>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-2 col-md-3">
+                    <div class="footer_widget_design wow" >
+                        <div class="link_heading">
+                            <h3 class="link_heading">Useful Links</h3>
+                        </div>
+                        <div class="links">
+                            <ul>
+                                <li><a href="{% url 'core:home' %}">Home </a></li>
+                                <li><a href="{% url 'core:book' %}">Schedule A Meeting</a></li>
+                                <li><a href="#section0">About Us</a></li>
+                                <li><a href="#contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-2 col-md-3">
+                    <div class="footer_widget_design wow  ">
+                        <div class="link_heading">
+                            <h3 class="link_heading">Resources</h3>
+                        </div>
+                        <div class="links">
+                            <ul>
+                                <li><a href="{% url 'core:appointments' %}">Dashboard</a></li>
+                                <li><a href="{% url 'core:privacypolicy' %}">Privacy Policy</a></li>
+                                <li><a href="{% url 'core:cookiespolicy' %}">Cookies Policy</a></li>
+                                <li><a href="{% url 'core:termsnconditions' %}">Terms and Condition</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3">
+                    <div class="footer_widget_design fixwidth wow  " >
+                        <div class="link_heading">
+                            <h3 class="link_heading">Office Location</h3>
+                        </div>
+                        <div class="links">
+                            <ul>
+                                <li><a><i class="fas fa-map-marker-alt"></i> Ground Floor, NH-6, Matkatpur,
+                                    Kharagpur ,West Bengal
+                                    721305
+                                </a></li>
+                                <li><a type="tel:+91 9339656867" class="itsupport"><i class="fas fa-phone"></i> Phone:
+                                    +91 9339656867
+                                </a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p>Disclaimer:QuantBot(Quantbot Securities Private Limited) is a technology provider platform and does
+                    not act/intend to act as a wealth manager in any capacity. We are not a Wealth Advisor/Investment
+                    Advisor/Portfolio Management Service or any similar service affiliated to stock markets. Every
+                    selection/transaction taken place through QuantBot is solely the responsibility of the user. We have
+                    tried our best to make the system as transparent as possible, however, QuantBot cannot be held
+                    liable under any circumstances.
+                </p>
+            </div>
+        </div>
+        <div class="footer_bottom pt-60 pb-15">
+            <div class="container tp-border">
+                <div class="row align-items-center">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="copyright_text pt-20">
+                            <p style="margin-left: 30%" class="mx-50">@
+                                <script>document.write(new Date().getFullYear())</script>
+                                All Copyright Reserved. Design by
+                                <span class="colorblue"><a href="https://www.quantbotsecurities.com/"> Quant Bot Securities</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER END -->
+</main>
+<!-- JS here -->
+<script src="{% static 'assets/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+<script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/one-page-nav-min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+<script src="{% static 'assets/js/ajax-form.js' %}"></script>
+<script src="{% static 'assets/js/wow.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.scrollUp.min.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+
+</html>

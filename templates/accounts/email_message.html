@@ -1,0 +1,23 @@
+{% extends 'authbase.html' %}
+{% load static %}
+{% block content %}
+<section class="page__title  fix text-center">
+    <div class="slider__shape">
+        <img class="shape triangle" src="{% static 'assets/img/aboutpage/topElips.png' %}" alt="topshape">
+        <img class="shape dotted-square" src="{% static 'assets/img/aboutpage/rightElips.png' %}" alt="rightshape">
+        <img class="shape solid-square" src="{% static 'assets/img/aboutpage/circleElips.png' %}" alt="solid-square">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="page__title-content pt-235">
+					<h2 class="page_title">Email Verification</h2>
+                    <p style="color: white">We have sent you a verification email pls verify your email account.<br>
+                                        Check spam folder too.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

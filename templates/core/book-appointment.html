@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="col-xl-9 col-lg-8 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+        <div class="row">
+            <div class="col-xl-8 col-lg-6">
+                <h5 class="mb-0">Book Appointment</h5>
+            </div><!--end col-->
+        </div><!--end row-->
+
+        <div class="row">
+            <div class="col-12 mt-4 pt-2">
+                <form method="POST" id="AppointmentForm" data-slots-url="{% url 'core:ajax_load_slots' %}" novalidate>
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" style="color: black"> Date : <span
+                                        class="text-danger">*</span></label>
+                                {{ form.Date }}
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="input-time" style="color: black">Time : <span
+                                        class="text-danger">*</span></label>
+                                {{ form.Slot }}
+                            </div>
+                        </div><!--end col-->
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="input-time" style="color: black">Algo Trading Platform : <span
+                                        class="text-danger">*</span></label>
+                                {{ form.AlgoTradingPlatform }}
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label" style="color: black">Comments <span
+                                        class="text-danger">*</span></label>
+                                {{ form.Comment }}
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-lg-12">
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Book An Appointment</button>
+                            </div>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </form>
+            </div>
+        </div><!--end row-->
+    </div><!--end col-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#id_Date").datepicker({
+                minDate: 0,
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+            });
+            $("#id_Date").change(function () {
+                var url = $("#AppointmentForm").attr("data-slots-url");  // get the url of the `load_slots` view
+                var dateId = $(this).val();  // get the selected country ID from the HTML input
+
+                $.ajax({                       // initialize an AJAX request
+                    url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+                    data: {
+                        'Date': dateId       // add the country id to the GET parameters
+                    },
+                    success: function (data) {   // `data` is the return of the `load_cities` view function
+                        $("#id_Slot").html(data);  // replace the contents of the city input with the data that came from the server
+                    }
+                });
+
+            });
+        });
+    </script>
+    <script>
+    function check(){
+        if (document.getElementById('id_Date').value!='')
+            document.getElementById('id_Slot').disabled=false;
+        else
+            document.getElementById('id_Slot').disabled=true;
+
+        console.log('check123')
+    }
+    </script>
+{% endblock %}
