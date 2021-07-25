@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     # custom apps
     'core.apps.CoreConfig',
     'accounts',
-    'appointment'
+    'appointment',
     # third party apps
     'phonenumber_field',
     'verify_email.apps.VerifyEmailConfig',
